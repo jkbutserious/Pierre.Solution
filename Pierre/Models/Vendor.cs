@@ -8,7 +8,7 @@ namespace Pierre.Models
     public string Name { get; set; }
     public string Description { get; set; }
     public int Id { get; }
-    // public List<Order> Orders { get; set; } //Will add when Order class is created
+    public List<Order> Orders { get; set; }
 
     public Vendor(string vendorName, string description)
     {
@@ -16,7 +16,7 @@ namespace Pierre.Models
       Description = description;
       _instances.Add(this);
       Id = _instances.Count;
-      // Orders = new List<Order>{}; //Will add when Order class is created
+      Orders = new List<Order>{}; 
     }
 
     public static void ClearAll()
@@ -34,9 +34,9 @@ namespace Pierre.Models
       return _instances[searchId-1];
     }
 
-    // public void AddOrder(Order order)
-    // {
-    //   Order.Add(order);
-    // }
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
   }
 }
