@@ -15,7 +15,7 @@ namespace Pierre.Models
     {
       Title = title;
       Description = description;
-      Price = price;
+      Price = 456456;
       Date = date;
       _instances.Add(this);
       Id = _instances.Count;

@@ -35,7 +35,7 @@ namespace Pierre.Tests
     }
 
     [TestMethod]
-    public void GetTitle_ReturnDescription_String()
+    public void GetDescription_ReturnDescription_String()
     {
       string title = "Croissants";
       string description = "Test Order";
@@ -46,6 +46,20 @@ namespace Pierre.Tests
       string result = newOrder.Description;
 
       Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void GetPrice_ReturnPrice_Int()
+    {
+      string title = "Croissants";
+      string description = "Test Order";
+      int price = 200;
+      string date = "2020-07-24";
+      Order newOrder = new Order(title, description, price, date);
+
+      int result = newOrder.Price;
+
+      Assert.AreEqual(price, result);
     }
   }
 }
