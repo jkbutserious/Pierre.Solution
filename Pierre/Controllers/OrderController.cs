@@ -7,24 +7,42 @@ namespace Pierre.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/vendors/{id}/orders")]
+    [HttpGet("/orders")]
     public ActionResult Index()
     {
       List<Order> allOrders = Order.GetAll();
       return View(allOrders);
     }
 
-    [HttpGet("/vendors/{id}/orders/new")]
-    public ActionResult New()
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
-      return View();
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
     }
 
-    [HttpPost("/vendors/{id}/orders")]
-    public ActionResult Create(string title, string description, int price, string date)
+    // [HttpPost("/vendors/{vendorId}/orders")]
+    // public ActionResult Create(int vendorId, string title, string description, int price, string date)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Vendor foundVendor = Vendor.Find(vendorId);
+    //   Order newOrder = new Order(title, description, price, date);
+    //   foundVendor.AddOrder(newOrder);
+    //   List<Order> vendorOrders = foundVendor.Orders;
+    //   model.Add("orders", vendorOrders);
+    //   model.Add("vendor", foundVendor);
+    //   return RedirectToAction("Index");
+    // }
+
+    [HttpGet("/categories/{categoryId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      Order newOrder = new Order(title, description, price, date);
-      return RedirectToAction("/vendors/{id}");
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
     }
   }
 }

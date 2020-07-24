@@ -1,16 +1,16 @@
-<h1>Order @Model.Id Details:</h1>
+<h1>Order @Model["order"].Id Details:</h1>
 
 <h2>Title:</h2>
-<p>@Model.Title</p>
+<p>@Model["order"].Title</p>
 
 <h2>Description</h2>
-<p>@Model.Description</p>
+<p>@Model["order"].Description</p>
 
 <h2>Price:</h2>
-<p>@Model.Price</p>
+<p>@Model["order"].Price</p>
 
 <h2>Date Ordered:</h2>
-<p>@Model.Date</p>
+<p>@Model["order"].Date</p>
 
-<a href="/orders">Return to Orders List</a>
+<a href="vendors/@Model["vendor"].Id/orders">Return to Orders List</a>
 <a href="/">Home</a>

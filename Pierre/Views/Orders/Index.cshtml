@@ -5,7 +5,7 @@
   <p>Let's bake some bread!</p>
 }
 <ul>
-  @foreach (Order order in @Model["orders"])
+  @foreach (Order order in Model)
   {
     <li><a href="/orders/@order.Id">@order.Title</a></li>
   }
