@@ -75,5 +75,26 @@ namespace Pierre.Tests
 
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllOrders_OrderList()
+    {
+      string title01 = "Croissants";
+      string title02 = "Baguettes";
+      string description01 = "Test Order 1";
+      string description02 = "Test Order 2";
+      int price01 = 200;
+      int price02 = 180;
+      string date01 = "2020-07-24";
+      string date02 = "2020-07-23";
+
+      Order newOrder01 = new Order(title01, description01, price01, date01);
+      Order newOrder02 = new Order(title02, description02, price02, date02);
+      List<Order> orderList = new List<Order> {newOrder01, newOrder02};
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(orderList, result);
+    }
   }
 }
