@@ -61,5 +61,19 @@ namespace Pierre.Tests
 
       Assert.AreEqual(price, result);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnDate_String()
+    {
+      string title = "Croissants";
+      string description = "Test Order";
+      int price = 200;
+      string date = "2020-07-24";
+      Order newOrder = new Order(title, description, price, date);
+
+      string result = newOrder.Date;
+
+      Assert.AreEqual(date, result);
+    }
   }
 }

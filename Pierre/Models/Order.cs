@@ -16,7 +16,7 @@ namespace Pierre.Models
       Title = title;
       Description = description;
       Price = price;
-      Date = date;
+      Date = "Fail";
       _instances.Add(this);
       Id = _instances.Count;
     }
