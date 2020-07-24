@@ -76,7 +76,7 @@ namespace Pierre.Tests
     }
 
     [TestMethod]
-    public void Find_ReturnsSpecificVendor()
+    public void Find_ReturnsSpecificVendor_Find()
     {
       string name01 = "Suzie's Cafe";
       string name02 = "Joey's Diner";
