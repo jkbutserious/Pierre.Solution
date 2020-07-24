@@ -74,5 +74,20 @@ namespace Pierre.Tests
 
       CollectionAssert.AreEqual(vendorList, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsSpecificVendor()
+    {
+      string name01 = "Suzie's Cafe";
+      string name02 = "Joey's Diner";
+      string description01 = "Test Vendor 1";
+      string description02 = "Test Vendor 2";
+      Vendor newVendor01 = new Vendor(name01, description01);
+      Vendor newVendor02 = new Vendor(name02, description02);
+
+      Vendor result = Vendor.Find(2);
+
+      Assert.AreEqual(newVendor02, result);
+    }
   }
 }
