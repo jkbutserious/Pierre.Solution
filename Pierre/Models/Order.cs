@@ -13,7 +13,7 @@ namespace Pierre.Models
 
     public Order (string title, string description, int price, string date)
     {
-      Title = "Fail";
+      Title = title;
       Description = description;
       Price = price;
       Date = date;
