@@ -12,7 +12,7 @@ namespace Pierre.Models
 
     public Vendor(string vendorName, string description)
     {
-      Name = "Fail";
+      Name = vendorName;
       _instances.Add(this);
       Id = _instances.Count;
       // Orders = new List<Order>{}; //Will add when Order class is created
