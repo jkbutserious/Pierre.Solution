@@ -43,5 +43,20 @@ namespace Pierre.Tests
 
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsCategoryId_Int()
+    {
+      //Arrange
+      string name = "Suzie's Cafe";
+      string description = "Test Vendor";
+      Vendor newVendor = new Vendor(name, description);
+
+      //Act
+      int result = newVendor.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }

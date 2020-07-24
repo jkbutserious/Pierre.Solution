@@ -15,7 +15,7 @@ namespace Pierre.Models
       Name = vendorName;
       Description = description;
       _instances.Add(this);
-      Id = _instances.Count;
+      Id = 132132321;
       // Orders = new List<Order>{}; //Will add when Order class is created
     }
 
