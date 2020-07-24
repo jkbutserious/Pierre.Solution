@@ -14,7 +14,7 @@ namespace Pierre.Models
     public Order (string title, string description, int price, string date)
     {
       Title = title;
-      Description = "Fail";
+      Description = description;
       Price = price;
       Date = date;
       _instances.Add(this);
