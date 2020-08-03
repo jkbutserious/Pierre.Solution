@@ -21,7 +21,7 @@ namespace Pierre.Controllers
       return View(vendor);
     }
 
-    [HttpGet("/categories/{categoryId}/orders/{orderId}")]
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
       Order order = Order.Find(orderId);
@@ -32,7 +32,7 @@ namespace Pierre.Controllers
       return View(model);
     }
 
-    [HttpPost("vendor/{vendorId}/orders/delete")]
+    [HttpPost("/vendor/{vendorId}/orders/delete")]
     public ActionResult DeleteAll()
     {
       Order.ClearAll();
